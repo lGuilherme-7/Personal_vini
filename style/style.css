@@ -481,13 +481,10 @@ body.menu-open {
     background: rgba(255,255,255,0.04);
     border: 1px solid rgba(255,255,255,0.08);
     border-left: 4px solid rgba(34,197,94,0.70);
-
     border-radius: var(--radius-md);
     padding: 14px 16px;
-
     color: var(--text-body);
     font-weight: 560;
-
     transition: transform var(--t-fast), background var(--t-med), border-color var(--t-med);
 }
 
@@ -523,15 +520,12 @@ body.menu-open {
     border: none;
     background: transparent;
     padding: 18px 18px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-
     cursor: pointer;
     text-align: left;
-
     color: var(--text-heading);
     font-weight: 700;
     transition: background var(--t-med);
@@ -581,10 +575,8 @@ body.menu-open {
     display: flex;
     gap: 16px;
     overflow-x: auto;
-
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-
     padding: 8px 6px 14px;
     scrollbar-width: none;
     cursor: grab;
@@ -597,12 +589,10 @@ body.menu-open {
 .slide {
     flex: 0 0 92%;
     scroll-snap-align: center;
-
     background: rgba(255,255,255,0.04);
     border: 1px solid rgba(255,255,255,0.10);
     border-radius: var(--radius-lg);
     overflow: hidden;
-
     box-shadow: var(--shadow-md);
 }
 
@@ -639,7 +629,6 @@ body.menu-open {
     border-radius: 999px;
     font-size: 12px;
     font-weight: 800;
-
     background: rgba(0,0,0,0.55);
     border: 1px solid rgba(255,255,255,0.18);
     color: #fff;
@@ -670,20 +659,15 @@ body.menu-open {
     transform: translateY(-50%);
     width: 46px;
     height: 46px;
-
     border: 1px solid rgba(255,255,255,0.12);
     border-radius: 999px;
-
     background: rgba(15, 23, 42, 0.75);
     color: var(--text-heading);
-
     cursor: pointer;
     font-size: 30px;
     line-height: 1;
-
     display: grid;
     place-items: center;
-
     box-shadow: var(--shadow-sm);
     transition: transform var(--t-fast), background var(--t-med);
     z-index: 2;
