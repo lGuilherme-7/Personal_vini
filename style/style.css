@@ -26,7 +26,6 @@ html {
 }
 
 /* ===================== ROOT (VARIÁVEIS) ===================== */
-/* Você pode trocar só essas cores pra mudar o site inteiro */
 :root {
     /* Cores (fitness/autoridade) */
     --color-primary: #0B1220;       /* Fundo/headers escuros (navy quase preto) */
@@ -149,7 +148,7 @@ a {
 
 .hero-image {
     display: flex;
-    justify-content: flex-end; /* empurra a foto pro canto direito */
+    justify-content: flex-end; /* empurra a foto pro canto direitooo */
     align-items: center;
 }
 
@@ -157,14 +156,10 @@ a {
     width: 360px;
     max-width: 100%;
     height: auto;
-
-    border-radius: 24px; /* cantos suaves */
+    border-radius: 24px;
     object-fit: cover;
-
     background: #fff; /* garante fundo branco limpo */
     box-shadow: 0 18px 40px rgba(0,0,0,0.35);
-
-    /* efeito de leve destaque */
     border: 1px solid rgba(255,255,255,0.25);
 }
 
@@ -205,7 +200,7 @@ a {
     transform: translateY(-1px);
 }
 
-/* destaque sutil no link ativo (se você aplicar class="active" no JS) */
+/* destaque sutil no link ativo no JS) */
 .navList a.active {
     background: rgba(34,197,94,0.14);
     color: var(--text-heading);
@@ -232,7 +227,7 @@ a {
     transform: translateY(-1px);
 }
 
-/* Classe que você já usa no body quando o menu abre */
+/* Classe que já usa no body quando o menu abre */
 body.menu-open {
     overflow: hidden !important;
 }
