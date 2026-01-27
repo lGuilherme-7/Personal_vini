@@ -502,68 +502,7 @@ body.menu-open {
     }
 }
 
-/* ===================== FAQ (ACCORDION) ===================== */
-#faq {
-    background: var(--bg-section);
-    border-top: 1px solid rgba(255,255,255,0.06);
-}
 
-.faq-item {
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.10);
-    margin-bottom: 14px;
-}
-
-.faq-question {
-    width: 100%;
-    border: none;
-    background: transparent;
-    padding: 18px 18px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    cursor: pointer;
-    text-align: left;
-    color: var(--text-heading);
-    font-weight: 700;
-    transition: background var(--t-med);
-}
-
-.faq-question:hover {
-    background: rgba(255,255,255,0.05);
-}
-
-.faq-question .arrow {
-    color: rgba(56,189,248,0.90);
-    transition: transform var(--t-med);
-    font-size: 1.2rem;
-}
-
-/* resposta */
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.45s ease;
-    border-top: 1px solid rgba(255,255,255,0.08);
-}
-
-.faq-answer p {
-    padding: 16px 18px 18px;
-    margin: 0;
-    color: var(--text-body);
-}
-
-/* ativo */
-.faq-item.active .faq-answer {
-    max-height: 520px;
-}
-
-.faq-item.active .arrow {
-    transform: rotate(180deg);
-}
 
 /* ===================== RESULTADOS (CARROSSEL) ===================== */
 /* Baseado no que você já tinha para carrossel/coleção :contentReference[oaicite:2]{index=2} */
@@ -685,6 +624,116 @@ body.menu-open {
 @media (max-width: 700px) {
     .carrossel-btn { display: none; }
     .foto img { height: 300px; }
+}
+
+/* ================= ARTIGOS ================= */
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.article-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+}
+
+.article-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.article-content {
+    padding: 24px;
+}
+
+.article-content h4 {
+    color: var(--color-primary);
+    margin-bottom: 12px;
+}
+
+.article-link {
+    color: var(--color-secondary);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.article-link:hover {
+    text-decoration: underline;
+}
+
+/* ===================== FAQ (ACCORDION) ===================== */
+#faq {
+    background: var(--bg-section);
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.faq-item {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.10);
+    margin-bottom: 14px;
+}
+
+.faq-question {
+    width: 100%;
+    border: none;
+    background: transparent;
+    padding: 18px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    cursor: pointer;
+    text-align: left;
+    color: var(--text-heading);
+    font-weight: 700;
+    transition: background var(--t-med);
+}
+
+.faq-question:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+.faq-question .arrow {
+    color: rgba(56,189,248,0.90);
+    transition: transform var(--t-med);
+    font-size: 1.2rem;
+}
+
+/* resposta */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.45s ease;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.faq-answer p {
+    padding: 16px 18px 18px;
+    margin: 0;
+    color: var(--text-body);
+}
+
+/* ativo */
+.faq-item.active .faq-answer {
+    max-height: 520px;
+}
+
+.faq-item.active .arrow {
+    transform: rotate(180deg);
 }
 
 /* ===================== CONTATO ===================== */
