@@ -922,6 +922,7 @@ body::before {
 /* ===== GOOGLE FONTS — Barlow Condensed + DM Sans ===== */
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
 
+
 /* ===== VARIÁVEIS ===== */
 :root {
   --azul:         #0057FF;
@@ -1000,6 +1001,7 @@ body::before {
 }
 
 /* ===== CONTAINER ===== */
+
 .container {
   max-width: 1160px;
   margin: 0 auto;
