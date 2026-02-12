@@ -1100,7 +1100,8 @@ body::before {
   }
   .hero-image-frame img {
     height: 100px;
-    object-fit: cover;
+    object-fit:cover;
+    
   }
   .hero-tag-float {
     left: 12px;
