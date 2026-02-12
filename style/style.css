@@ -951,7 +951,7 @@ body::before {
   .hero-stats { justify-content: center; }
   .hero-image { justify-content: center; }
   .hero-tag-float { left: 0; bottom: 20px; }
-  .hero-image-frame img { height: 400px; }
+  .hero-image-frame img { height: 140px; }
   .hero-text h2 { font-size: clamp(3rem, 9vw, 5rem); }
 
   /* ===== CONSULTORIAS ===== */
