@@ -1,409 +1,346 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Trainer</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="style/mediaquery.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VGFit — Personal Trainer</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <!-- Fontes novas (Barlow Condensed + DM Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,800;0,900;1,700;1,900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style/style.css">
 </head>
-
 <body>
+
+<!-- CURSORES -->
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
 
 <!-- ================= HEADER ================= -->
 <header class="header">
-    <div class="container">
-        <h1 class="logo">Personal Trainer</h1>
-
-        <!-- Botão menu hambúrguer -->
-        <button class="menu-toggle" id="menuToggle">☰</button>
-
-        <!-- Menu de navegação -->
-        <nav class="navList" id="navList">
-            <a href="#abordagem">Especialidades</a>
-            <a href="#servicos">Serviços</a>
-            <a href="#Resultados">Resultados</a>
-            <a href="#faq">Dúvidas</a>
-          <!-- <a href="#artigo">Artigos</a> --> 
-            <a href="#contato">Contato</a>
-        </nav>
-    </div>
-    
+  <div class="container">
+    <h1 class="logo">VG<span>Fit</span></h1>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    <nav class="navList" id="navList">
+      <a href="#abordagem">Especialidades</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#Resultados">Resultados</a>
+      <a href="#faq">Dúvidas</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
 </header>
 
-<!-- ================= HERO / INÍCIO ================= -->
+<!-- ================= HERO ================= -->
 <section class="hero">
-    <div class="container hero-content">
-        <div class="hero-text">
-            <h2>Transforme seu<strong> corpo </strong>com acompanhamento profissional</h2>
-            <p>Acompanhamento profissional para você alcançar seus objetivos</p>
-            <a href="https://wa.me/558199585275?text=ol%C3%A1%2C%20gostaria%20de%20saber%20como%20funciona%20a%20consultoria.%20" target="_blank" class="btn">
-                Agendar avaliação
-             </a>
-        </div>
+  <div class="container hero-content">
 
-        <div class="hero-image">
-            <img src="img/logo.png" 
-            >
+    <div class="hero-text reveal">
+      <div class="hero-badge">Personal Trainer · Recife</div>
+
+      <h2>
+        <span class="outline">Transforme</span>
+        <span class="highlight">seu corpo</span>
+        agora
+      </h2>
+
+      <p>Treinos 100% personalizados com acompanhamento próximo, metas reais e resultados que você vai sentir.</p>
+
+      <a href="https://wa.me/558199585275?text=Olá%2C%20gostaria%20de%20saber%20como%20funciona%20a%20consultoria."
+         target="_blank" class="btn">
+        Agendar avaliação
+      </a>
+
+      <!-- Botões das Consultorias -->
+      <div class="hero-consultorias">
+        <a href="consultoria-online.html" class="btn-consultoria">📲 Consultoria Online</a>
+        <a href="consultoria-presencial.html" class="btn-consultoria">🏋️ Consultoria Presencial</a>
+      </div>
+
+      <!-- Stats com contagem animada (sem duplicar) -->
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num"><span data-target="50" data-suffix="+">0+</span></span>
+          <span class="stat-label">Alunos</span>
         </div>
+        <div class="stat">
+          <span class="stat-num"><span data-target="3" data-suffix=" anos">0 anos</span></span>
+          <span class="stat-label">Experiência</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num"><span data-target="100" data-suffix="%">0%</span></span>
+          <span class="stat-label">Personalizado</span>
+        </div>
+      </div>
+    </div> 
+
+    <div class="hero-image reveal">
+      <div class="hero-image-frame">
+        <img src="img/logo.png" alt="Vinicius Gomes — Personal Trainer">
+      </div>
+      <div class="hero-tag-float">CREF 022479-G/PE</div>
     </div>
 
-    
+  </div>
 </section>
+
 
 <!-- ================= SOBRE ================= -->
 <section id="sobre" class="section reveal">
-    
-    <div class="container">
-        <h3>Sobre mim</h3>
+  <div class="container">
+    <div class="sobre-grid">
 
-        <p>
-            Sou personal trainer formado, atuo com foco em treinos personalizados, acompanhamento próximo e resultados reais para cada aluno.
-        </p>
+      <div>
+        <div class="section-label">Quem sou</div>
+        <h3>Sobre<br>mim</h3>
+        <p>Personal trainer formado, com foco em treinos personalizados, acompanhamento próximo e resultados reais para cada aluno.</p>
 
         <ul class="info-list">
-            <li><strong>Formação:</strong> Educação Física</li>
-            <li><strong>CREF:</strong> 022479-G/PE</li>
-            <li><strong>Atendimento:</strong> Online e presencial</li>
+          <li><strong>Formação</strong> Educação Física</li>
+          <li><strong>CREF</strong> 022479-G/PE</li>
+          <li><strong>Atendimento</strong> Online e presencial</li>
         </ul>
+      </div>
 
-        <!-- ================= VÍDEO ================= -->
-<section id="video" class="section reveal">
-    <div class="container">
-        <h3>Minha história como personal</h3>
-        <div class="video-container">
+      <!-- Vídeo -->
+      <section id="video">
+        <div class="container">
+          <h3>Minha história como personal</h3>
+          <div class="video-container">
             <video src="img/video/video.mp4" controls></video>
+          </div>
         </div>
+      </section>
+
     </div>
+  </div>
 </section>
 
+<!-- ================= ESPECIALIDADES ================= -->
+<section id="abordagem" class="section reveal" data-num="01">
+  <div class="container">
+    <div class="section-label">O que faço</div>
+    <h3>Especialidades</h3>
+    <p>Treino é evolução construída com planejamento, acompanhamento e adaptação ao seu ritmo.</p>
+
+    <div class="cards">
+      <div class="card reveal" data-index="01">
+        <span class="card-icon">💪</span>
+        <h4>Hipertrofia</h4>
+        <p>Ganho de massa muscular com progressão inteligente e acompanhamento de cargas.</p>
+      </div>
+      <div class="card reveal" data-index="02">
+        <span class="card-icon">🔥</span>
+        <h4>Emagrecimento</h4>
+        <p>Treinos voltados para perda de gordura com preservação de massa muscular.</p>
+      </div>
+      <div class="card reveal" data-index="03">
+        <span class="card-icon">⚡</span>
+        <h4>Condicionamento</h4>
+        <p>Melhora do fôlego, força e desempenho atlético geral.</p>
+      </div>
     </div>
-
-</section>
-
-<!-- ================= especialidades ================= -->
-<section id="abordagem" class="section reveal">
-    <div class="container">
-        <h3>Minha Especialidades</h3>
-
-        <p>
-            O treino é um processo de evolução física construído com planejamento, acompanhamento e adaptação ao seu ritmo e objetivos.
-        </p>
-
-        <div class="cards">
-            <div class="card reveal">
-                <h4>Hipertrofia</h4>
-                <p>Focada na relação entre pensamentos emoções e comportamentos</p>
-            </div>
-
-            <div class="card reveal">
-                <h4>Emagrecimento</h4>
-                <p>Treinos voltados para perda de gordura</p>
-            </div>
-
-            <div class="card reveal">
-                <h4>Condicionamento</h4>
-                <p>Melhora do fôlego, força e desempenho</p>
-            </div>
-       
-        </div>
-    </div>
+  </div>
 </section>
 
 <!-- ================= SERVIÇOS ================= -->
-<section id="servicos" class="section reveal">
-    <div class="container">
-        <h3>Serviços</h3>
-
-        <ul class="services-list">
-            <li>Treino personalizado</li>
-            <li>Consultoria online</li>
-            <li>Personal presencial</li>
-            <li>Avaliação física</li>
-            <li>Acompanhamento mensal</li>
-            <li>Treinos para iniciantes e avançados</li>
-        </ul>
-    </div>
+<section id="servicos" class="section reveal" data-num="02">
+  <div class="container">
+    <div class="section-label">O que ofereço</div>
+    <h3>Serviços</h3>
+    <ul class="services-list">
+      <li>Treino personalizado</li>
+      <li>Consultoria online</li>
+      <li>Personal presencial</li>
+      <li>Avaliação física</li>
+      <li>Acompanhamento mensal</li>
+      <li>Treinos para iniciantes e avançados</li>
+    </ul>
+  </div>
 </section>
 
 <!-- ================= RESULTADOS ================= -->
-
-<section id="Resultados" class="section reveal">
+<section id="Resultados" class="section reveal" data-num="03">
   <div class="container">
-    <h3>Resultados dos alunos</h3>
-    <p>Arraste para o lado para ver mais transformações.</p>
+    <div class="section-label">Transformações</div>
+    <h3>Resultados</h3>
+    <p>Arraste para ver mais transformações reais.</p>
 
-    <div class="carrossel">
+    <div class="carrossel-wrapper">
       <button class="carrossel-btn prev" aria-label="Anterior">‹</button>
+      
+      <div class="carrossel">
+        <div class="carrossel-track" id="trackResultados">
 
-      <div class="carrossel-track" id="trackResultados">
-
-        <!-- ===== Coleção 1 ===== -->
-        <div class="slide">
-          <div class="colecao">
-            <div class="foto">
-              <span class="tag">Antes</span>
-              <img src="img/aluno1/res.05.jpeg">
-              <img src="img/aluno1/res.04.jpeg" >
+          <!-- Slide 1 -->
+          <div class="slide">
+            <div class="colecao">
+              <div class="foto">
+                <span class="tag">Antes</span>
+                <img src="img/aluno1/res.05.jpeg" alt="Guilherme - Antes">
+                <img src="img/aluno1/res.04.jpeg" alt="Guilherme - Antes 2">
+              </div>
+              <div class="foto">
+                <span class="tag">Depois</span>
+                <img src="img/aluno1/res.02.jpeg" alt="Guilherme - Depois">
+                <img src="img/aluno1/res.03.jpeg" alt="Guilherme - Depois 2">
+              </div>
             </div>
-            <div class="foto">
-              <span class="tag">Depois</span>
-              <img src="img/aluno1/res.02.jpeg">
-              <img src="img/aluno1/res.03.jpeg">
-            </div>
-          </div>
-          <div class="colecao-info">
-            <h4>Guilherme quase 2 meses</h4>
-            <p>-2kg • +massa muscular • mais força</p>
-          </div>
-        </div>
-
-        <!-- ===== Coleção 2 ===== -->
-        <div class="slide">
-          <div class="colecao">
-            <div class="foto">
-              <span class="tag">Antes</span>
-              <img src="img/aluno3/fotp.antes2.jpeg" alt="Carlos - Antes">
-            </div>
-            <div class="foto">
-              <span class="tag">Depois</span>
-              <img src="img/aluno3/foto.res2.jpeg" alt="Carlos - Depois">
+            <div class="colecao-info">
+              <h4>Guilherme — 2 meses</h4>
+              <p>-2kg · +massa muscular · mais força</p>
             </div>
           </div>
 
-           <div class="colecao">
-            <div class="foto">
-              <span class="tag">Antes</span>
-              <img src="img/aluno3/fotp.antes1.jpeg" alt="Carlos - Antes">
+          <!-- Slide 2 -->
+          <div class="slide">
+            <div class="colecao">
+              <div class="foto">
+                <span class="tag">Antes</span>
+                <img src="img/aluno3/fotp.antes2.jpeg" alt="Jerferson - Antes">
+              </div>
+              <div class="foto">
+                <span class="tag">Depois</span>
+                <img src="img/aluno3/foto.res2.jpeg" alt="Jerferson - Depois">
+              </div>
             </div>
-            <div class="foto">
-              <span class="tag">Depois</span>
-              <img src="img/aluno3/foto.res1.jpeg" alt="Carlos - Depois">
+            <div class="colecao">
+              <div class="foto">
+                <span class="tag">Antes</span>
+                <img src="img/aluno3/fotp.antes1.jpeg" alt="Jerferson - Antes 2">
+              </div>
+              <div class="foto">
+                <span class="tag">Depois</span>
+                <img src="img/aluno3/foto.res1.jpeg" alt="Jerferson - Depois 2">
+              </div>
             </div>
-          </div>
-          
-
-          <div class="colecao-info">
-            <h4>Jerferson – 3 meses</h4>
-            <p>consultoria online • mais definição • mais resistência</p>
-          </div>
-        </div>
-        <!-- ===== Coleção 3 ===== -->
-        <div class="slide">
-          <div class="colecao">
-            <div class="foto">
-              <span class="tag">Antes</span>
-              <img src="img/aluno2/foto.antes.JPG" alt="Maria - Antes">
-            </div>
-            <div class="foto">
-              <span class="tag">Depois</span>
-              <img src="img/aluno2/foto.res.JPG" alt="Maria - Depois">
+            <div class="colecao-info">
+              <h4>Jerferson — 3 meses</h4>
+              <p>Consultoria online · mais definição · mais resistência</p>
             </div>
           </div>
 
-          <div class="colecao-info">
-            <h4>Edvania – 2 meses</h4>
-            <p>menos medidas • mais autoestima</p>
-          </div>
-        </div>
-
-        <!-- ===== Coleção 3 ===== -->
-        <div class="slide">
-          <div class="colecao">
-            <div class="foto">
-              <span class="tag">Antes</span>
-              <img src="img/aluno5/foto.antes.jpeg" alt="Maria - Antes">
+          <!-- Slide 3 -->
+          <div class="slide">
+            <div class="colecao">
+              <div class="foto">
+                <span class="tag">Antes</span>
+                <img src="img/aluno2/foto.antes.JPG" alt="Edvania - Antes">
+              </div>
+              <div class="foto">
+                <span class="tag">Depois</span>
+                <img src="img/aluno2/foto.res.JPG" alt="Edvania - Depois">
+              </div>
             </div>
-            <div class="foto">
-              <span class="tag">Depois</span>
-              <img src="img/aluno5/foto.resultado.jpeg" alt="Maria - Depois">
+            <div class="colecao-info">
+              <h4>Edvania — 2 meses</h4>
+              <p>Menos medidas · mais autoestima</p>
             </div>
           </div>
 
-          <div class="colecao-info">
-            <h4>Maria – 1 meses</h4>
-            <p>menos medidas • mais autoestima</p>
+          <!-- Slide 4 -->
+          <div class="slide">
+            <div class="colecao">
+              <div class="foto">
+                <span class="tag">Antes</span>
+                <img src="img/aluno5/foto.antes.jpeg" alt="Maria - Antes">
+              </div>
+              <div class="foto">
+                <span class="tag">Depois</span>
+                <img src="img/aluno5/foto.resultado.jpeg" alt="Maria - Depois">
+              </div>
+            </div>
+            <div class="colecao-info">
+              <h4>Maria — 1 mês</h4>
+              <p>Menos medidas · mais autoestima</p>
+            </div>
           </div>
+
         </div>
       </div>
-
+      
       <button class="carrossel-btn next" aria-label="Próximo">›</button>
     </div>
   </div>
 </section>
 
-  <!-- ================= ARTIGOS =================
-<section id="artigos" class="section reveal">
-    <div class="container" id="artigo">
-        <h3>TCC</h3>
-        
-        <div class="articles-grid" >
-            <article class="article-card reveal">
-                <div class="article-image">
-                    <img src="#" alt="tcc">
-                </div>
-                <div class="article-content">
-                    <h4>title</h4>
-                    <p>paragrafo</p>
-                    <a href="#" class="article-link">Ler mais →</a>
-                </div>
-            </article>
-
-            <article class="article-card reveal">
-                <div class="article-image">
-                    <img src="#" alt="certificados">
-                </div>
-                <div class="article-content">
-                    <h4>title</h4>
-                    <p>paragrafo</p>
-                    <a href="#" class="article-link">Ler mais →</a>
-                </div>
-            </article>
-
-            <article class="article-card reveal">
-                <div class="article-image">
-                    <img src="#" alt="video">
-                </div>
-                <div class="article-content">
-                    <h4>title</h4>
-                    <p>paragrafo</p>
-                    <a href="#" class="article-link">Ler mais →</a>
-                </div>
-            </article>
-        </div>
-    </div>
-</section>
-</section>
--->
-
 <!-- ================= FAQ ================= -->
-<section id="faq" class="section reveal">
-    
-    <div class="container">
-        <h3>Dúvidas frequentes</h3>
+<section id="faq" class="section reveal" data-num="04">
+  <div class="container">
+    <div class="section-label">Perguntas</div>
+    <h3>Dúvidas<br>frequentes</h3>
 
-        <div class="faq-item">
-            <button class="faq-question">
-                <span>Como funciona o acompanhamento?</span>
-                <span class="arrow">▼</span>
-            </button>
-            <div class="faq-answer">
-                <p>O acompanhamento começa com uma avaliação (objetivos, rotina, nível atual e possíveis limitações). A partir disso eu monto um treino 100% personalizado e vou ajustando conforme sua evolução, com orientação, correções e metas claras.</p>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <button class="faq-question">
-                <span>Como funciona o atendimento online?</span>
-                <span class="arrow">▼</span>
-            </button>
-            <div class="faq-answer">
-                <p>Você recebe seu treino pelo app/planilha, com vídeos e orientações de execução. Fazemos check-ins semanais (ou conforme o plano), ajustes no treino e acompanhamento da evolução (medidas, fotos, desempenho e constância)..</p>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <button class="faq-question">
-                <span>Quais são os planos e valores?</span>
-                <span class="arrow">▼</span>
-            </button>
-            <div class="faq-answer">
-                <p>Os planos variam conforme formato (online ou presencial) e frequência de acompanhamento. Me chama no WhatsApp que eu te envio os valores atualizados e te ajudo a escolher o melhor plano para seu objetivo.</p>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <button class="faq-question">
-                <span>Quanto tempo dura cada treino?</span>
-                <span class="arrow">▼</span>
-            </button>
-            <div class="faq-answer">
-                <p>Em média, de 60 a 120 minutos. Pode variar conforme seu objetivo (emagrecimento, hipertrofia ou condicionamento), disponibilidade e nível de condicionamento.</p>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <button class="faq-question">
-                <span>Em quanto tempo vejo resultados?</span>
-                <span class="arrow">▼</span>
-            </button>
-            <div class="faq-answer">
-                <p>Você costuma sentir melhora de disposição e desempenho nas primeiras semanas. Mudanças visíveis geralmente aparecem entre 4 e 8 semanas, dependendo de consistência, alimentação, descanso e frequência de treino.</p>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <button class="faq-question">
-                <span>Treino serve para iniciantes?</span>
-                <span class="arrow">▼</span>
-            </button>
-            <div class="faq-answer">
-                <p>Sim! Eu adapto tudo ao seu nível. Iniciante começa com foco em técnica, segurança e progressão, para evoluir sem lesões e ganhar confiança rápido.</p>
-            </div>
-        </div>
-
-
+    <div class="faq-item">
+      <button class="faq-question"><span>Como funciona o acompanhamento?</span><span class="arrow">▼</span></button>
+      <div class="faq-answer"><p>O acompanhamento começa com uma avaliação (objetivos, rotina, nível atual e possíveis limitações). A partir disso monto um treino 100% personalizado e vou ajustando conforme sua evolução, com orientação, correções e metas claras.</p></div>
     </div>
+    <div class="faq-item">
+      <button class="faq-question"><span>Como funciona o atendimento online?</span><span class="arrow">▼</span></button>
+      <div class="faq-answer"><p>Você recebe seu treino pelo app/planilha, com vídeos e orientações de execução. Fazemos check-ins semanais, ajustes no treino e acompanhamento da evolução (medidas, fotos, desempenho e constância).</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question"><span>Quais são os planos e valores?</span><span class="arrow">▼</span></button>
+      <div class="faq-answer"><p>Os planos variam conforme formato (online ou presencial) e frequência de acompanhamento. Me chama no WhatsApp que te envio os valores atualizados e te ajudo a escolher o melhor plano para seu objetivo.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question"><span>Quanto tempo dura cada treino?</span><span class="arrow">▼</span></button>
+      <div class="faq-answer"><p>Em média, de 60 a 120 minutos. Pode variar conforme seu objetivo, disponibilidade e nível de condicionamento.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question"><span>Em quanto tempo vejo resultados?</span><span class="arrow">▼</span></button>
+      <div class="faq-answer"><p>Você costuma sentir melhora de disposição e desempenho nas primeiras semanas. Mudanças visíveis geralmente aparecem entre 4 e 8 semanas, dependendo de consistência, alimentação, descanso e frequência de treino.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question"><span>Treino serve para iniciantes?</span><span class="arrow">▼</span></button>
+      <div class="faq-answer"><p>Sim! Adapto tudo ao seu nível. Iniciante começa com foco em técnica, segurança e progressão, para evoluir sem lesões e ganhar confiança rápido.</p></div>
+    </div>
+  </div>
 </section>
-
-
 
 <!-- ================= CONTATO ================= -->
 <section id="contato" class="section reveal">
-    <div class="container">
-        <h3>Agende sua avaliação</h3>
-
-        <p>Personal trainer dedicado a treinos personalizados, acompanhamento próximo e resultados reais.</p>
-
-        <a href="https://wa.me/558199585275?text=ol%C3%A1%2C%20gostaria%20de%20saber%20como%20funciona%20a%20consultoria.%20" target="_blank" class="btn">Falar pelo WhatsApp</a>
-    </div>
+  <div class="container">
+    <div class="section-label">Vamos começar</div>
+    <h3>Agende sua<br>avaliação</h3>
+    <p>Personal trainer dedicado a treinos personalizados, acompanhamento próximo e resultados reais.</p>
+    <a href="https://wa.me/558199585275?text=olá%2C%20gostaria%20de%20saber%20como%20funciona%20a%20consultoria." target="_blank" class="btn">
+      Falar pelo WhatsApp
+    </a>
+  </div>
 </section>
 
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
-    <div class="container footer-content">
-        <div class="footer-section">
-            <h4>Sobre</h4>
-            <p>Personal Trainer em Recife</p>
-        </div>
-
-        <div class="footer-section">
-            <h4>Contato</h4>
-            <a href="">
-                📧 Viniciusgomesedf@gmail.com
-            </a>
-            <p>📱 (81) 81 9958-5275</p>
-            <p>📍 Recife, PE</p>
-        </div>
-
-        <div class="footer-section">
-            <h4>Links úteis</h4>
-            <a href="#sobre">Sobre mim</a>
-            <a href="#servicos">Serviços</a>
-            <a href="#contato">Contato</a>
-        </div>
-
-        <div class="footer-section">
-            <h4>Redes Sociais</h4>
-            <a href="https://www.instagram.com/vinicius_gomes.personal/" target="_blank">Instagram</a>
-            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-        </div>
+  <div class="container footer-content">
+    <div class="footer-section">
+      <h4>Sobre</h4>
+      <p>Personal Trainer em Recife especializado em resultados reais.</p>
     </div>
-
-    <div class="footer-bottom">
-        <p>© 2026 Personal Trainer – CREF  022479-G/PE | Seu resultado começa aqui.</p>
-        <p>Desenvolvido com 💪 para transformar vidas</p>
+    <div class="footer-section">
+      <h4>Contato</h4>
+      <p>📧 vgfit@personal.com</p>
+      <p>📱 (81) 9958-5275</p>
+      <p>📍 Recife, PE</p>
     </div>
+    <div class="footer-section">
+      <h4>Links</h4>
+      <a href="#sobre">Sobre mim</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#contato">Contato</a>
+    </div>
+    <div class="footer-section">
+      <h4>Redes</h4>
+      <a href="https://www.instagram.com/vinicius_gomes.personal/" target="_blank">Instagram</a>
+      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 VGFit — CREF 022479-G/PE</p>
+    <p>Desenvolvido com 💪 para transformar vidas</p>
+  </div>
 </footer>
 
-<!-- JS -->
 <script src="javascript/script.js"></script>
 </body>
 </html>
