@@ -1099,7 +1099,7 @@ body::before {
     border-radius: 12px;
   }
   .hero-image-frame img {
-    height: 300px;
+    height: 100px;
     object-fit: cover;
   }
   .hero-tag-float {
