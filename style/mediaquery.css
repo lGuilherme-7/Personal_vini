@@ -254,7 +254,7 @@
   }
 }
 
-/* ===== MOBILE PEQUENO (até 420px ) ===== */
+/* ===== MOBILE PEQUENO (até 420px) ===== */
 @media (max-width: 420px) {
   .hero-text h2 { font-size: 2.6rem; }
   .stat-num { font-size: 1.5rem; }
