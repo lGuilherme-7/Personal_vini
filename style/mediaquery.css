@@ -1,7 +1,6 @@
 /* =============================================
-   VGFIT — mediaquery.css  |  Versão Final
-   Testado: iPhone 16 (393px) · 14 Pro Max (430px)
-   e todos os Androids comuns (360–412px)
+   VGFIT — mediaquery.css  |  Versão Corrigida
+   Mobile: resultados 2x2 SEM imagens gigantes
 ============================================= */
 
 .btn-whatsapp-float {
@@ -147,67 +146,49 @@
   .services-list li:nth-child(odd) { padding-right: 0; }
 
   /* ========================================
-     RESULTADOS — Grade 2×2 responsiva
-     
-     PROBLEMA ANTERIOR: height fixo (180px) ficava
-     enorme no iPhone 16 (393px) e pequeno em telas
-     largas. 
-     
-     SOLUÇÃO: aspect-ratio proporcional.
-     Cada célula tem ~50% da largura da tela.
-     Com aspect-ratio: 3/4 (retrato), a altura
-     se ajusta automaticamente a qualquer tela.
-     
-     iPhone 16  (393px) → célula ~190px → altura ~253px ✓
-     iPhone 14 PM (430px) → célula ~209px → altura ~278px ✓
-     Android médio (390px) → funciona igual ✓
+     RESULTADOS (MOBILE) — 2x2 bonito
+     - remove aspect-ratio que estourava
+     - controla altura com clamp()
+     - mantém 2 colunas sempre
   ======================================== */
 
   .carrossel-wrapper { flex-direction: column; gap: 16px; }
   .carrossel-btn.prev,
   .carrossel-btn.next { display: none; }
 
-  /* Grade 2 colunas — o JS não mexe aqui, só no .slide */
-  .colecao {
+  .colecao{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3px;
-    margin-bottom: 3px;
-  }
-
-  /* Cada .foto = 1 célula */
-  .foto {
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
+    gap: 6px;
+    margin-bottom: 6px;
+    border-radius: var(--radius);
     overflow: hidden;
   }
 
-  /*
-    A CORREÇÃO PRINCIPAL:
-    Usamos aspect-ratio em vez de height fixo.
-    A imagem ocupa 100% da largura da célula
-    e a altura é calculada automaticamente pela
-    proporção — funciona igual em qualquer tela.
-  */
-  .foto img {
+  .foto{
+    position: relative;
+    overflow: hidden;
+    background: var(--preto3);
+    border-radius: 12px;
+  }
+
+  /* 1 imagem por célula (normal) */
+  .foto img{
     width: 100%;
-    height: auto;           /* sem altura fixa */
-    aspect-ratio: 3 / 4;   /* proporção retrato — se adapta a tudo */
+    height: clamp(140px, 38vw, 220px);
     object-fit: cover;
+    object-position: center;
     display: block;
-    flex: 1;
+
+    /* mata seu antigo aspect-ratio/flex */
+    aspect-ratio: auto !important;
+    flex: initial !important;
   }
 
-  /* Slide 1: tem 2 imgs por .foto — divide o espaço entre elas */
-  .foto img + img {
-    margin-top: 3px;
-  }
-
-  /* Quando há 2 imgs, cada uma fica mais "quadrada" */
-  .foto img + img,
-  .foto:has(img + img) img {
-    aspect-ratio: 3 / 2;   /* landscape quando empilhadas */
+  /* Slide 1: quando tem 2 imagens dentro da mesma .foto */
+  .foto img + img{
+    margin-top: 6px;
+    height: clamp(120px, 30vw, 170px);
   }
 
   .colecao-info { padding: 12px 4px 0; }
@@ -261,20 +242,20 @@
 }
 
 /* ===== AJUSTE FINO: telas pequenas (até 390px) ===== */
-/* iPhone 16 padrão, iPhone SE, Androids compactos   */
 @media (max-width: 390px) {
   .hero-text h2 { font-size: 2.7rem; }
   .stat-num { font-size: 1.6rem; }
   .section h3 { font-size: 2.3rem; }
   .hero-badge { font-size: 0.62rem; letter-spacing: 0.12em; }
 
-  /* Fotos um pouco mais compactas em telas muito estreitas */
-  .foto img {
-    aspect-ratio: 4 / 5;
-  }
-  .foto img + img,
-  .foto:has(img + img) img {
-    aspect-ratio: 4 / 3;
+  /* Deixa as fotos um pouco menores em telas estreitas */
+  @media (max-width: 768px) {
+    .foto img{
+      height: clamp(130px, 36vw, 200px);
+    }
+    .foto img + img{
+      height: clamp(110px, 28vw, 160px);
+    }
   }
 }
 
