@@ -159,8 +159,8 @@
   .colecao{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 6px;
-    margin-bottom: 6px;
+    gap: 8px;
+    margin-bottom: 8px;
     border-radius: var(--radius);
     overflow: hidden;
   }
@@ -169,30 +169,30 @@
     position: relative;
     overflow: hidden;
     background: var(--preto3);
-    border-radius: 12px;
+    border-radius: 14px;
   }
 
   /* 1 imagem por célula (normal) */
-  .foto img{
+  .foto img {
     width: 100%;
-    height: clamp(140px, 38vw, 220px);
-    object-fit: cover;
+    height: 75vw;          
+    max-height: 260px;   
+    min-height: 180px; object-fit: cover;
     object-position: center;
     display: block;
-
-    /* mata seu antigo aspect-ratio/flex */
     aspect-ratio: auto !important;
     flex: initial !important;
   }
 
-  /* Slide 1: quando tem 2 imagens dentro da mesma .foto */
-  .foto img + img{
-    margin-top: 6px;
-    height: clamp(120px, 30vw, 170px);
+ .foto img + img {
+    margin-top: 8px;
+    height: 38vw;
+    min-height: 140px;
+    max-height: 180px;
   }
 
-  .colecao-info { padding: 12px 4px 0; }
-  .colecao-info h4 { font-size: 1.1rem; }
+  .colecao-info { padding: 14px 4px 0; }
+  .colecao-info h4 { font-size: 1.15rem; }
 
   /* ===== Navegação mobile (injetada pelo JS) ===== */
   .carrossel-nav-mobile {
