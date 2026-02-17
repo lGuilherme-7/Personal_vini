@@ -1,7 +1,328 @@
-<a class="btn-whatsapp-float"
-   href="https://wa.me/558199585275?text=Olá%2C%20gostaria%20de%20saber%20mais!"
-   target="_blank" aria-label="WhatsApp">
-  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-    <path d="M16 0C7.163 0 0 7.163 0 16c0 2.833.74 5.493 2.035 7.8L0 32l8.418-2.007A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 01-6.77-1.847l-.487-.29-5.003 1.193 1.22-4.863-.32-.503A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.907c-.4-.2-2.363-1.163-2.73-1.297-.367-.133-.633-.2-.9.2s-1.033 1.297-1.267 1.563c-.233.267-.467.3-.867.1s-1.69-.623-3.217-1.983c-1.19-1.06-1.993-2.37-2.227-2.77-.233-.4-.025-.617.176-.817.18-.178.4-.467.6-.7.2-.233.267-.4.4-.667.133-.267.067-.5-.033-.7-.1-.2-.9-2.167-1.233-2.967-.323-.78-.653-.673-.9-.687l-.767-.013c-.267 0-.7.1-1.067.5s-1.4 1.367-1.4 3.333 1.433 3.867 1.633 4.133c.2.267 2.82 4.307 6.833 6.033.955.413 1.7.66 2.283.843.958.305 1.832.262 2.52.159.769-.115 2.363-.967 2.697-1.9.333-.933.333-1.733.233-1.9-.1-.167-.367-.267-.767-.467z"/>
-  </svg>
-</a>
+/* =============================================
+   VGFIT — mediaquery.css
+   Responsividade para Mobile
+============================================= */
+
+/* ========================================
+   BOTÃO FLUTUANTE WHATSAPP
+   Adicione este HTML antes de </body>:
+   <a class="btn-whatsapp-float"
+      href="https://wa.me/558199585275"
+      target="_blank" aria-label="WhatsApp">
+     <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+       <path d="M16 0C7.163 0 0 7.163 0 16c0 2.833.74 5.493 2.035 7.8L0 32l8.418-2.007A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 01-6.77-1.847l-.487-.29-5.003 1.193 1.22-4.863-.32-.503A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.907c-.4-.2-2.363-1.163-2.73-1.297-.367-.133-.633-.2-.9.2s-1.033 1.297-1.267 1.563c-.233.267-.467.3-.867.1s-1.69-.623-3.217-1.983c-1.19-1.06-1.993-2.37-2.227-2.77-.233-.4-.025-.617.176-.817.18-.178.4-.467.6-.7.2-.233.267-.4.4-.667.133-.267.067-.5-.033-.7-.1-.2-.9-2.167-1.233-2.967-.323-.78-.653-.673-.9-.687l-.767-.013c-.267 0-.7.1-1.067.5s-1.4 1.367-1.4 3.333 1.433 3.867 1.633 4.133c.2.267 2.82 4.307 6.833 6.033.955.413 1.7.66 2.283.843.958.305 1.832.262 2.52.159.769-.115 2.363-.967 2.697-1.9.333-.933.333-1.733.233-1.9-.1-.167-.367-.267-.767-.467z"/>
+     </svg>
+   </a>
+======================================== */
+.btn-whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 998;
+  width: 58px;
+  height: 58px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 24px rgba(37, 211, 102, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.btn-whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 32px rgba(37, 211, 102, 0.7);
+}
+.btn-whatsapp-float svg {
+  width: 30px;
+  height: 30px;
+  fill: #fff;
+}
+
+/* ===== TABLET (até 1024px) ===== */
+@media (max-width: 1024px) {
+  .container { padding: 0 24px; }
+  .section { padding: 80px 0; }
+
+  .hero-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    padding: 40px 24px;
+  }
+  .hero-text { padding-right: 24px; }
+  .hero-image-frame img { height: 420px; }
+
+  .sobre-grid { gap: 48px; }
+
+  .cards { grid-template-columns: 1fr; }
+}
+
+/* ===== MOBILE (até 768px) ===== */
+@media (max-width: 768px) {
+
+  /* Cursor desativado no touch */
+  .cursor-dot,
+  .cursor-ring { display: none; }
+  body { cursor: auto; }
+  .btn,
+  .menu-toggle,
+  .carrossel-btn,
+  .faq-question,
+  .card { cursor: pointer; }
+
+  .container { padding: 0 16px; }
+  .section { padding: 60px 0; }
+
+  /* ===== HEADER ===== */
+  .menu-toggle { display: flex; }
+
+  .navList {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: rgba(7, 9, 12, 0.97);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 87, 255, 0.2);
+    padding: 8px 0;
+    z-index: 99;
+  }
+  .navList.open { display: flex; }
+
+  .navList a {
+    padding: 16px 24px;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    width: 100%;
+  }
+  .navList a:last-child { border-bottom: none; }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: auto;
+    padding-top: 72px;
+    padding-bottom: 48px;
+  }
+  .hero::before { display: none; }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    padding: 28px 16px;
+    gap: 32px;
+  }
+
+  /* Imagem aparece primeiro */
+  .hero-image { order: -1; }
+  .hero-image-frame { max-width: 100%; }
+  .hero-image-frame img {
+    height: 300px;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .hero-tag-float {
+    left: 10px;
+    bottom: 14px;
+    font-size: 0.72rem;
+    padding: 9px 12px;
+  }
+
+  .hero-text { padding-right: 0; }
+  .hero-text h2 {
+    font-size: clamp(2.8rem, 13vw, 4.5rem);
+    margin-bottom: 16px;
+  }
+  .hero-text > p { max-width: 100%; }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 15px 20px;
+    font-size: 0.95rem;
+  }
+
+  .hero-consultorias {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .btn-consultoria {
+    width: 100%;
+    padding: 13px 18px;
+    font-size: 0.82rem;
+  }
+
+  .hero-stats {
+    gap: 0;
+    margin-top: 28px;
+    padding-top: 24px;
+    justify-content: space-between;
+  }
+  .stat { align-items: center; flex: 1; }
+  .stat-num { font-size: 1.8rem; }
+
+  /* ===== SOBRE ===== */
+  .sobre-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  /* ===== ESPECIALIDADES ===== */
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+  .card { padding: 32px 20px; }
+  .card::before { font-size: 5rem; }
+
+  /* ===== SERVIÇOS ===== */
+  .services-list {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+  .services-list li:nth-child(odd) { padding-right: 0; }
+
+  /* ========================================
+     RESULTADOS — Grade 2×2 no mobile
+     Antes (topo esq) | Antes (topo dir)
+     Depois (baixo esq) | Depois (baixo dir)
+  ======================================== */
+
+  .carrossel-wrapper {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* Esconde botões laterais do desktop */
+  .carrossel-btn.prev,
+  .carrossel-btn.next { display: none; }
+
+  /*
+    O .slide tem dentro: .colecao + .colecao-info
+    Cada .colecao tem 2 .foto (antes e depois)
+    No desktop: cada .colecao é uma linha lado a lado (antes|depois)
+    No mobile: queremos 2x2 — os dois "antes" em cima, os dois "depois" embaixo
+
+    Como slides com 1 .colecao (aluno2, aluno5):
+      [antes] [depois]  — mantém 1 linha, lado a lado, ok
+
+    Como slides com 2 .colecao (aluno3):
+      .colecao 1: [antes1] [depois1]
+      .colecao 2: [antes2] [depois2]
+      No mobile queremos:
+      [antes1] [antes2]
+      [depois1] [depois2]
+
+    Isso exige reordenar os .foto dentro de cada slide.
+    A solução mais limpa via CSS puro é:
+    - O .slide vira um grid 2 colunas
+    - Cada .colecao usa display:contents para "liberar" os .foto no grid do .slide
+    - Reordenamos com order: os antes ficam order 1, os depois ficam order 2
+  */
+
+  .slide {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+    align-items: start;
+  }
+
+  /* Libera os .foto para o grid do .slide */
+  .colecao {
+    display: contents;
+  }
+
+  /* Cada .foto ocupa 1 célula */
+  .foto {
+    min-width: 0;
+  }
+
+  /* "Antes" sobem (order baixo), "Depois" descem (order alto) */
+  .foto:has(.tag) { order: 0; } /* fallback */
+
+  /* Identificamos pelo conteúdo da .tag via CSS */
+  .colecao .foto:first-child { order: 1; }  /* Antes */
+  .colecao .foto:last-child  { order: 2; }  /* Depois */
+
+  .foto img {
+    height: 185px;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Info ocupa as duas colunas */
+  .colecao-info {
+    grid-column: 1 / -1;
+    order: 99;
+    padding: 14px 4px 0;
+  }
+
+  /* Navegação mobile */
+  .carrossel-nav-mobile {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    width: 100%;
+    margin-top: 4px;
+  }
+  .carrossel-nav-mobile button {
+    width: 52px;
+    height: 52px;
+    border: 1px solid rgba(0, 87, 255, 0.4);
+    background: transparent;
+    color: #3D85FF;
+    font-size: 1.5rem;
+    font-weight: 900;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+  }
+  .carrossel-nav-mobile button:hover,
+  .carrossel-nav-mobile button:active {
+    background: #0057FF;
+    border-color: #0057FF;
+    color: #fff;
+  }
+
+  /* ===== FAQ ===== */
+  .faq-question {
+    font-size: 1rem;
+    padding: 18px 0;
+    cursor: pointer;
+  }
+  .faq-answer p {
+    font-size: 0.9rem;
+    padding-bottom: 18px;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    padding: 36px 16px 36px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 6px;
+    padding: 18px 16px;
+  }
+}
+
+/* ===== MOBILE PEQUENO (até 420px) ===== */
+@media (max-width: 420px) {
+  .hero-text h2 { font-size: 2.6rem; }
+  .stat-num { font-size: 1.5rem; }
+  .foto img { height: 155px; }
+  .footer-content { grid-template-columns: 1fr; }
+  .section h3 { font-size: 2.2rem; }
+  .hero-badge { font-size: 0.62rem; letter-spacing: 0.12em; }
+}
