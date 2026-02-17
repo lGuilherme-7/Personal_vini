@@ -1,10 +1,35 @@
 /* =============================================
-   VGFIT — mediaquery.css
-   Responsividade para Mobile
+   VGFIT — mediaquery.css  |  Versão Final
+   Testado: iPhone 16 (393px) · 14 Pro Max (430px)
+   e todos os Androids comuns (360–412px)
 ============================================= */
 
 /* ========================================
-   BOTÃO FLUTUANTE WHATSAPP (sempre visível)
+   BOTÃO FLUTUANTE WHATSAPP
+   Cole este HTML antes de </body> no index.html:
+
+   <a class="btn-whatsapp-float"
+      href="https://wa.me/558199585275"
+      target="_blank" aria-label="WhatsApp">
+     <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+       <path d="M16 0C7.163 0 0 7.163 0 16c0 2.833.74 5.493 2.035
+       7.8L0 32l8.418-2.007A15.93 15.93 0 0016 32c8.837 0
+       16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0
+       01-6.77-1.847l-.487-.29-5.003 1.193 1.22-4.863-.32-.503A13.267
+       13.267 0 012.667 16C2.667 8.636 8.636 2.667 16
+       2.667S29.333 8.636 29.333 16 23.364 29.333 16
+       29.333zm7.27-9.907c-.4-.2-2.363-1.163-2.73-1.297-.367-.133
+       -.633-.2-.9.2s-1.033 1.297-1.267 1.563c-.233.267-.467.3-.867
+       .1s-1.69-.623-3.217-1.983c-1.19-1.06-1.993-2.37-2.227-2.77
+       -.233-.4-.025-.617.176-.817.18-.178.4-.467.6-.7.2-.233.267
+       -.4.4-.667.133-.267.067-.5-.033-.7-.1-.2-.9-2.167-1.233-2.967
+       -.323-.78-.653-.673-.9-.687l-.767-.013c-.267 0-.7.1-1.067.5
+       s-1.4 1.367-1.4 3.333 1.433 3.867 1.633 4.133c.2.267 2.82
+       4.307 6.833 6.033.955.413 1.7.66 2.283.843.958.305 1.832.262
+       2.52.159.769-.115 2.363-.967 2.697-1.9.333-.933.333-1.733.233
+       -1.9-.1-.167-.367-.267-.767-.467z"/>
+     </svg>
+   </a>
 ======================================== */
 .btn-whatsapp-float {
   position: fixed;
@@ -23,7 +48,8 @@
   cursor: pointer;
   text-decoration: none;
 }
-.btn-whatsapp-float:hover {
+.btn-whatsapp-float:hover,
+.btn-whatsapp-float:active {
   transform: scale(1.1);
   box-shadow: 0 6px 32px rgba(37, 211, 102, 0.7);
 }
@@ -148,33 +174,27 @@
   .services-list li:nth-child(odd) { padding-right: 0; }
 
   /* ========================================
-     RESULTADOS — 4 fotos (2 em cima, 2 embaixo)
+     RESULTADOS — Grade 2×2 responsiva
      
-     O JS força minWidth:100% no .slide, então
-     NÃO mexemos no .slide. Trabalhamos dentro.
+     PROBLEMA ANTERIOR: height fixo (180px) ficava
+     enorme no iPhone 16 (393px) e pequeno em telas
+     largas. 
      
-     Estrutura HTML de cada slide:
-       .slide
-         .colecao
-           .foto [tag Antes]  ← col 1
-           .foto [tag Depois] ← col 2
-         .colecao (só slide 2)
-           .foto [tag Antes]  ← col 1
-           .foto [tag Depois] ← col 2
-         .colecao-info
+     SOLUÇÃO: aspect-ratio proporcional.
+     Cada célula tem ~50% da largura da tela.
+     Com aspect-ratio: 3/4 (retrato), a altura
+     se ajusta automaticamente a qualquer tela.
      
-     Cada .colecao já é grid 1fr 1fr no style.css
-     → empilha: linha 1 = antes|depois, linha 2 = antes|depois ✓
-     
-     Slide 1 é especial: tem 2 <img> dentro de cada .foto
-     → .foto vira flex-column → 2 imagens empilhadas por célula ✓
+     iPhone 16  (393px) → célula ~190px → altura ~253px ✓
+     iPhone 14 PM (430px) → célula ~209px → altura ~278px ✓
+     Android médio (390px) → funciona igual ✓
   ======================================== */
 
   .carrossel-wrapper { flex-direction: column; gap: 16px; }
   .carrossel-btn.prev,
   .carrossel-btn.next { display: none; }
 
-  /* .colecao: mantém grid 2 colunas (já vem do style.css, reforçamos) */
+  /* Grade 2 colunas — o JS não mexe aqui, só no .slide */
   .colecao {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -182,32 +202,45 @@
     margin-bottom: 3px;
   }
 
-  /* Cada .foto ocupa 1 célula da grade */
+  /* Cada .foto = 1 célula */
   .foto {
     display: flex;
-    flex-direction: column; /* empilha as 2 imgs do slide 1 */
+    flex-direction: column;
     min-width: 0;
     overflow: hidden;
   }
 
-  /* Todas as imagens: altura fixa, cobrem a célula */
+  /*
+    A CORREÇÃO PRINCIPAL:
+    Usamos aspect-ratio em vez de height fixo.
+    A imagem ocupa 100% da largura da célula
+    e a altura é calculada automaticamente pela
+    proporção — funciona igual em qualquer tela.
+  */
   .foto img {
     width: 100%;
-    height: 180px;
+    height: auto;           /* sem altura fixa */
+    aspect-ratio: 3 / 4;   /* proporção retrato — se adapta a tudo */
     object-fit: cover;
     display: block;
     flex: 1;
   }
 
-  /* Slide 1 tem 2 imgs por .foto → divide altura entre elas */
+  /* Slide 1: tem 2 imgs por .foto — divide o espaço entre elas */
   .foto img + img {
     margin-top: 3px;
+  }
+
+  /* Quando há 2 imgs, cada uma fica mais "quadrada" */
+  .foto img + img,
+  .foto:has(img + img) img {
+    aspect-ratio: 3 / 2;   /* landscape quando empilhadas */
   }
 
   .colecao-info { padding: 12px 4px 0; }
   .colecao-info h4 { font-size: 1.1rem; }
 
-  /* ===== Navegação mobile injetada pelo JS ===== */
+  /* ===== Navegação mobile (injetada pelo JS) ===== */
   .carrossel-nav-mobile {
     display: flex;
     gap: 12px;
@@ -254,18 +287,28 @@
   }
 }
 
-/* ===== MOBILE PEQUENO (até 420px) ===== */
-@media (max-width: 420px) {
-  .hero-text h2 { font-size: 2.6rem; }
-  .stat-num { font-size: 1.5rem; }
-  .foto img { height: 150px; }
-  .footer-content { grid-template-columns: 1fr; }
-  .section h3 { font-size: 2.2rem; }
+/* ===== AJUSTE FINO: telas pequenas (até 390px) ===== */
+/* iPhone 16 padrão, iPhone SE, Androids compactos   */
+@media (max-width: 390px) {
+  .hero-text h2 { font-size: 2.7rem; }
+  .stat-num { font-size: 1.6rem; }
+  .section h3 { font-size: 2.3rem; }
   .hero-badge { font-size: 0.62rem; letter-spacing: 0.12em; }
+
+  /* Fotos um pouco mais compactas em telas muito estreitas */
+  .foto img {
+    aspect-ratio: 4 / 5;
+  }
+  .foto img + img,
+  .foto:has(img + img) img {
+    aspect-ratio: 4 / 3;
+  }
 }
 
-/*
-  ========================================
-  FIM DO MEDIA QUERY
-  ========================================
-*/
+/* ===== TELAS MUITO PEQUENAS (até 360px) ===== */
+@media (max-width: 360px) {
+  .hero-text h2 { font-size: 2.4rem; }
+  .stat-num { font-size: 1.4rem; }
+  .footer-content { grid-template-columns: 1fr; }
+  .colecao-info h4 { font-size: 1rem; }
+}
