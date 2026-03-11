@@ -316,8 +316,6 @@
     height: clamp(10px, 28vw, 160px);
   }
 }
-
-
 /* =============================================
    TELAS MÍNIMAS — até 360px
    Casos extremos: fontes e grid reduzidos
