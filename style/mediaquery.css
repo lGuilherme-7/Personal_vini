@@ -127,7 +127,7 @@
     gap: 32px;
   }
 
-  /* Imagem aparece antes do texto no mobile */
+  /* Imagem aparece antes do texto no mobile*/
   .hero-image { order: -1; }
   .hero-image-frame { max-width: 100%; }
   .hero-image-frame img {
