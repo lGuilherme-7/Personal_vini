@@ -152,7 +152,7 @@
      - mantém 2 colunas sempre
   ======================================== */
 
-  .carrossel-wrapper { flex-direction: column; gap: 16px; }
+  .carrossel-wrapper { flex-direction: column; gap: 17px; }
   .carrossel-btn.prev,
   .carrossel-btn.next { display: none; }
 
